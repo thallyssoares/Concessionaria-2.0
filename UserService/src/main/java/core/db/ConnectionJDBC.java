@@ -5,14 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public final class ConnectionJDBC {
-    private String url;
-    private String user;
-    private String password;
+    private static String url;
+    private static String user;
+    private static String password;
 
-    public Connection getConnection(){
-        this.url = "jdbc:mysql://localhost:3306/concessionaria";
-        this.user = "root";
-        this.password = "";
+    public static Connection getConnection(){
+        url = "jdbc:mysql://localhost:3306/concessionaria";
+        user = "root";
+        password = "";
         try {
             Connection connection = DriverManager.getConnection(url, user, password);
             return connection;
@@ -22,4 +22,12 @@ public final class ConnectionJDBC {
         }
         return null;
     }
-}
+    public static void closeConnection(Connection connection) {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    }
