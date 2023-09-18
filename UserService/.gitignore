@@ -2,13 +2,15 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-!**/src/main/java/infra/TestUser.java
-
+src/main/java/infra/TestUser.java
+.idea
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+.idea/vcs.xml
+.idea/misc.xml
 *.iws
 *.iml
 *.ipr
